@@ -1,0 +1,27 @@
+CS 161 - HW 2
+Rob Harries
+UID: 904836501
+
+
+TEST CASE RESULTS FROM Q1:
+> (BFS '(ROOT))
+(ROOT)
+
+> (BFS '((((L E) F) T)))
+(T F L E)
+
+> (BFS '((R (I (G (H T))))))
+(R I G H T)
+
+> (BFS '(((A (B)) C (D))))
+(C A D B)
+
+> (BFS '((T (H R E) E)))
+(T E H R E)
+
+> (BFS '((A ((C ((E) D)) B))))
+(A B C D E)
+
+TEST CASE RESULTS FROM Q2:
+> (DFS (nil nil nil nil) nil)
+((nil nil nil nil) (t t nil nil) (nil t nil nil) (t t t nil) (nil nil t nil) (t nil t t) (nil nil t t) (t t t t))

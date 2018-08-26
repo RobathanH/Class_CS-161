@@ -1,0 +1,37 @@
+CS 161 - HW1
+Robathan Harries
+904836501
+
+1.
+(defun PAD (N) (cond ((< N 3) 1) (t (+ (PAD (- N 2)) (PAD (- N 3))))))
+
+The runtime of PAD is exponential with respects to N, so even for N as large as 100, PAD can crash.
+Tests are placed in table with next question.
+
+2.
+(defun SUMS (N) (cond ((< N 3) 0) (t (+ 1 (SUMS (- N 2)) (SUMS (- N 3))))))
+
+N	0  1  2  3  4  5  6  7  8  9
+PAD	1  1  1  2  2  3  4  5  7  9
+SUMS	0  0  0  1  1  2  3  4  6  8
+
+SUMS is always 1 less than its corresponding PAD value, because SUMS counts the number of internal vertices in the binary tree representing the program's recursion (Every instance of the program is either a base case, or launches 2 other branches of the program). PAD, on the other hand, counts the leaf vertices of the tree, which represent the base cases of the recursion, (N == 0, 1, 2 -> PADS(N) = 1). Since in any binary tree, there is 1 less internal vertex than there are leaf vertices.
+
+3.
+(defun ANON (TREE) (cond ((null TREE) nil) ((atom TREE) '?) (t (cons (ANON (car TREE)) (ANON (cdr TREE))))))
+> (ANON ’42)
+?
+> (ANON ’FOO)
+?
+> (ANON ’(((L E) F) T))
+(((? ?) ?) ?)
+> (ANON ’(5 FOO 3.1 -0.2))
+(? ? ? ?)
+> (ANON ’(1 (FOO 3.1) -0.2))
+(? (? ?) ?)
+> (ANON ’(((1 2) (FOO 3.1)) (BAR -0.2)))
+(((? ?) (? ?)) (? ?))
+> (ANON ’(R (I (G (H T)))))
+(? (? (? (? ?))))
+
+All the given test cases were successful

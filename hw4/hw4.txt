@@ -1,0 +1,23 @@
+Rob Harries
+UID: 904836501
+
+HW 4
+
+Is Graph 1 3-color solvable?
+	No
+
+Is Graph 1 4-color solvable?
+	Yes
+Solution:
+	-1 -28 -27 -26 25 -5 -9 -21 -24 -23 22 -14 -2 -18 -20 -19 17 -13 -16 15 -11 -12 10 -6 -8 7 -3 4 0
+	Colors: red, green, blue, yellow
+	1=yellow
+	2=blue
+	3=green
+	4=blue
+	5=red
+	6=green
+	7=red
+
+What is the minimum n-colorability of Graph 2?
+	8 colors
